@@ -2,12 +2,12 @@
 ⎕IO← 0
 
 m←⎕CSV 'BINANCE_BTCUSDT, 1D.csv' '' 4 1
+⍝m←⎕CSV 'TVC_SIlVER, 1D.csv' '' 4 1
 da ← ⊃m[0]
 c← da[;1]
 mk←0∧⍳6
-m0←⌈/c
-m1←⌊/c
-sc← {30 + 200×(⍵-m1)÷(m0+m1) }¨c
+sc← c ÷ 250 
+⍝sc ← 6 × c 
 t←4 s sc
 
 tc ← ⍉(⊃¨2 (⍴c) ) ⍴  ( c,t)
