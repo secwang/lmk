@@ -2,7 +2,8 @@
 )load a.dws
 ⎕IO← 0
 
-_ name scale ← 2⎕NQ#'GetCommandLineArgs'
+_ name start scale  ← 2⎕NQ#'GetCommandLineArgs'
+start ← ⍎start
 scale ← ⍎scale
 
 job ← {
@@ -14,7 +15,7 @@ c← da[;1]
 mk←0∧⍳6
 sc← c × ⍵ 
 ⍝sc ← 6 × c 
-t←3 s sc
+t←start s sc
 
 tc ← ⍉(⊃¨2 (⍴c) ) ⍴  ( c,t)
 
