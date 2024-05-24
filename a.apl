@@ -13,11 +13,9 @@ sl ← (step×-1) (step×-÷2) 0 (step×÷2)  step
 ⍝ c > mk[1]  3 > c d mk[1]
 ⍝ c < mk[1]  3 < c d mk[1]
 
-⍝ 130.99 > ¯6 6 0 0 ? bug
-⍝ di←{ a←  pp ⍵ ⋄ pp +/ a>sl} di←{+/⍵>sl}
-
-di←{g←⍵ ⋄ h←{g>⍵}¨sl ⋄ ⊃+/h}
-
+di←{+/⍵>sl}
+d←{ di 100×(⍺-⍵)÷⍺}
+⍝d←{ di (⍺-⍵)}
 
 mk← 0×⍳6
 
@@ -25,7 +23,6 @@ mk← 0×⍳6
 ps ← {
     a b c  ←  ⍵
     fm ← {⍺⊣mk[⍵]←b}
-    d←{ di (⍺-⍵)}
 
     (a=2) ∧ (0=c d b) ∧ (mk[4] = 0): 4 fm 2
     (a=2) ∧ (0=c d b) ∧ (mk[4] ≠ 0) ∧ ( (c d mk[4]) < 3 ):  4 fm 2
