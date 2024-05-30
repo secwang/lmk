@@ -9,7 +9,6 @@ scale ← ⍎scale
 job ← {
 
 m←⎕CSV ⍺ '' 4 1
-⍝m←⎕CSV 'TVC_SIlVER, 1D.csv' '' 4 1
 da ← ⊃m[0]
 c← da[;1]
 mk←0∧⍳6
@@ -24,14 +23,13 @@ gc ← {a b←⍵⋄  ( a@b ) 0 × ⍳6 }¨⊂[1]tc
 r ←  (∊( 6÷⍨⍴∊gc ) 6) ⍴ ∊ gc
 ⍝ur← da[;0],r
 
+tm←↑{'-'(≠⊆⊢)⍵ }¨da[;0]
 
-tm←{ a←⍵⋄m← (((⍴⍵)÷7)) , 7⋄m  ⍴ a } ∊ {∊20 ¯1 ⎕DT ⍵ }¨da[;0]
+
 ur←tm[;0 1 2],r
 ur
 }
 
-
+ 
 r ← name job scale
 ⎕←r
-
-
